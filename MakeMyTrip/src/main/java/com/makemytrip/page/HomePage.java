@@ -17,6 +17,12 @@ public class HomePage extends BasePage
 	@FindBy(xpath="//span[.='Continue']")
 	private WebElement continueBTN;
 	
+	@FindBy(id="password")
+	private WebElement pwTB;
+	
+	@FindBy(xpath="//span[.='Login']")
+	private WebElement loginBTN;
+	
 	public HomePage(WebDriver driver)
 	{
 		super(driver);
@@ -38,6 +44,13 @@ public class HomePage extends BasePage
 		continueBTN.click();
 	}
 	
-	
+	public void setPassword(String pw) 
+	{
+		pwTB.sendKeys(pw);
+	}
+	public void clickLogin() 
+	{
+		loginBTN.click();
+	}
 	
 }

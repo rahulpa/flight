@@ -13,8 +13,10 @@ public class LoginTest extends BaseTest
 	{
 		HomePage h = new HomePage(driver);
 		h.clickLoginBTN();
-		h.setUserName("admin");
+		h.setUserName("1205410rahul@gmail.com");
 		h.clickContinueBTN();
+		h.setPassword("Vini@1990");
+		h.clickLogin();
 		
 	}
 }
