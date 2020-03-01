@@ -12,11 +12,12 @@ public class LoginTest extends BaseTest
 	public void testLogin()
 	{
 		HomePage h = new HomePage(driver);
-		h.clickLoginBTN();
+		h.myAccount();
+		h.signInBTN();
 		h.setUserName("1205410rahul@gmail.com");
-		h.clickContinueBTN();
+		h.continueBTN();
 		h.setPassword("Vini@1990");
-		h.clickLogin();
+		h.clickLoginBTN();
 		
 	}
 }

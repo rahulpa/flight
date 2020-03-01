@@ -17,8 +17,9 @@ public abstract class BaseTest implements IAutoConst
 		System.setProperty(CHROME_KEY, CHROME_VALUE);
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.get("https://www.makemytrip.com/");
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().deleteAllCookies();
+		driver.get("https://www.yatra.com/");
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 	}
 	
 	@AfterMethod

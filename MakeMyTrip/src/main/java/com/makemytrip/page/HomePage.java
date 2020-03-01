@@ -8,19 +8,22 @@ import generic.BasePage;
 
 public class HomePage extends BasePage
 {
-	@FindBy(xpath="//p[.=' Login or Create Account']")
-	private WebElement LoginBTN;
+	@FindBy(xpath="//a[@class='dropdown-toggle'][.='My Account']")
+	private WebElement myAccount;
 	
-	@FindBy(id="username")
+	@FindBy(id="signInBtn")
+	private WebElement signinBTN;
+	
+	@FindBy(id="login-input")
 	private WebElement unTB;
 	
-	@FindBy(xpath="//span[.='Continue']")
+	@FindBy(id="login-continue-btn")
 	private WebElement continueBTN;
 	
-	@FindBy(id="password")
+	@FindBy(id="login-password")
 	private WebElement pwTB;
 	
-	@FindBy(xpath="//span[.='Login']")
+	@FindBy(id="login-submit-btn")
 	private WebElement loginBTN;
 	
 	public HomePage(WebDriver driver)
@@ -29,26 +32,31 @@ public class HomePage extends BasePage
 		PageFactory.initElements(driver, this);
 	}
 	
-	public void clickLoginBTN() 
+	public void myAccount() 
 	{
-		LoginBTN.click();
+		myAccount.click();
 	}
 	
-	public void setUserName(String un) 
+	public void signInBTN() 
+	{
+		signinBTN.click();
+	}
+	
+	public void setUserName(String un)
 	{
 		unTB.sendKeys(un);
 	}
 	
-	public void clickContinueBTN()
+	public void continueBTN() 
 	{
 		continueBTN.click();
 	}
-	
 	public void setPassword(String pw) 
 	{
 		pwTB.sendKeys(pw);
 	}
-	public void clickLogin() 
+	
+	public void clickLoginBTN() 
 	{
 		loginBTN.click();
 	}
